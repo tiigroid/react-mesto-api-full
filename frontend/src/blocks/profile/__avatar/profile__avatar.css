@@ -1,0 +1,14 @@
+.profile__avatar {
+  position: relative;
+  border-radius: 50%;
+  height: 120px;
+  width: 120px;
+  object-fit: cover;
+  grid-column-start: 1;
+  grid-row-start: 1;
+  cursor: pointer;
+}
+
+.profile__avatar:hover {
+  z-index: -1;
+}

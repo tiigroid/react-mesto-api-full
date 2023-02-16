@@ -1,0 +1,9 @@
+.gallery__like {
+font-weight: 400;
+font-size: 13px;
+line-height: 13px;
+text-align: center;
+text-overflow: ellipsis;
+white-space: nowrap;
+overflow: hidden;
+}

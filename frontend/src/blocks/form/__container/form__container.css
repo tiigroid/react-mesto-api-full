@@ -1,0 +1,19 @@
+.form__container {
+  padding-top: 60px;
+  width: 358px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 531px) {
+  .form__container {
+    max-width: 474px;
+    min-width: 282px;
+    margin: 0 19px;
+    min-height: 322px;
+    padding: 40px 22px;
+  }
+}

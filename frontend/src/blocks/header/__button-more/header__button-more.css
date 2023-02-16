@@ -1,0 +1,16 @@
+.header__button-more {
+  width: 24px;
+  height: 24px;
+  grid-column-start: 1;
+  grid-row-start: 2;
+  justify-self: end;
+  display: none;
+}
+
+@media screen and (max-width: 531px) {
+  .header__button-more {
+    display: block;
+    margin-right: 30px;
+    grid-row-start: 3;
+  }
+}

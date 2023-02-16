@@ -1,0 +1,21 @@
+.header__logo {
+  background-image: url(../../../images/logo.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 142px;
+  height: 33px;
+  grid-column-start: 1;
+  grid-row-start: 2;
+  padding: 45px 0 40px;
+}
+
+@media screen and (max-width: 531px) {
+  .header__logo {
+    width: 104px;
+    height: 25px;
+    margin-left: 30px;
+    padding: 27px 0 31px;
+    grid-row-start: 3;
+  }
+}

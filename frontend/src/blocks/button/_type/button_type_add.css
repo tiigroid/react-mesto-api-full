@@ -1,0 +1,5 @@
+.button_type_add {
+  border: 2px solid white;
+  border-radius: 2px;
+  background-image: url(../../../images/icon_add.svg);
+}

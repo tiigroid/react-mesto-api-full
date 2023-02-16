@@ -1,0 +1,14 @@
+.content {
+  padding: 0 19px;
+  max-width: 880px;
+  margin: 40px auto 67px auto;
+  display: grid;
+  gap: 51px;
+}
+
+@media screen and (max-width: 425px) {
+  .content {
+    margin: 42px auto 48px;
+    gap: 36px;
+  }
+}
