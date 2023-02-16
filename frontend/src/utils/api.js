@@ -124,6 +124,6 @@ class Api {
   }
 }
 
-const api = new Api('http://localhost:51441');
+const api = new Api('https://tii-mesto.students.nomoredomains.work');
 
 export default api;

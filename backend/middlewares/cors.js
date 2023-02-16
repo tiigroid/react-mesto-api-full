@@ -1,7 +1,7 @@
 const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
 const allowedCors = [
-  'http://tii-mesto.students.nomoredomains.work/',
-  'https://tii-mesto.students.nomoredomains.work/',
+  'http://tii-mesto.students.nomoredomains.work',
+  'https://tii-mesto.students.nomoredomains.work',
 ];
 
 module.exports = (req, res, next) => {
