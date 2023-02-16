@@ -10,12 +10,12 @@ const routerCards = require('./routes/cards');
 const { createUser, login, logout } = require('./controllers/users');
 const auth = require('./middlewares/auth');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
-const { cors } = require('./middlewares/cors');
+const cors = require('./middlewares/cors');
 const handleErrors = require('./middlewares/handle-errors');
 const { validateSignIn, validateSignUp } = require('./middlewares/handle-validation');
 const NotFoundError = require('./utils/errors/NotFoundError');
 
-const { PORT = 51441 } = process.env;
+const { PORT = 3000 } = process.env;
 const app = express();
 
 const limiter = rateLimit({

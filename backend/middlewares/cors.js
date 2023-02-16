@@ -1,9 +1,10 @@
 const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
 const allowedCors = [
-  'http://localhost:3000',
+  'http://tii-mesto.students.nomoredomains.work/',
+  'https://tii-mesto.students.nomoredomains.work/',
 ];
 
-module.exports.cors = (req, res, next) => {
+module.exports = (req, res, next) => {
   const { origin } = req.headers;
   const { method } = req;
   const requestHeaders = req.headers['access-control-request-headers'];
@@ -19,5 +20,5 @@ module.exports.cors = (req, res, next) => {
     return res.end();
   }
 
-  next();
+  return next();
 };
