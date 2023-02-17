@@ -35,29 +35,44 @@ export default function App() {
   const history = useHistory();
 
   useEffect(() => {
-    renderPage()
-    .then(() => {
-      setIsLoggedIn(true);
-      history.push('/');
+    checkToken()
+    .then(res => {
+      if (res) {
+        renderPage();
+        setIsLoggedIn(true);
+        history.push('/');
+      }
     })
     .catch(() => {
       setIsLoggedIn(false);
       history.push('/sign-in');
     })
-  }, [history]);
+  }, []);
+
+  function checkToken() {
+    const token = document.cookie
+    .split('; ')
+    .filter(c => c.includes('jwt='))
+    .toString()
+
+    if (token) {
+      return Promise.resolve(true)
+    } else {
+      return Promise.resolve(false)
+    }
+  }
 
   function renderPage() {
-    return Promise.all([
-      api.getUserData()
-        .then(data => {
-          setUserEmail(data.email);
-          setCurrentUser(data)
-      }),
-      api.getInitialCards()
-        .then(initialCards => {
-          setCards(initialCards.reverse())
-      })
-    ])
+    api.getUserData()
+      .then(data => {
+        setUserEmail(data.email);
+        setCurrentUser(data)
+    })
+
+    api.getInitialCards()
+      .then(initialCards => {
+        setCards(initialCards.reverse())
+    })
   }
 
   function handleRegister(email, password) {
@@ -74,11 +89,8 @@ export default function App() {
     api.login(email, password)
     .then(() => {
       renderPage()
-      .then(() => {
-        setIsLoggedIn(true);
-        history.push('/');
-      })
-      .catch(() => Promise.reject())
+      setIsLoggedIn(true);
+      history.push('/');
     })
     .catch(() => {
       setIssueOccured(true);
