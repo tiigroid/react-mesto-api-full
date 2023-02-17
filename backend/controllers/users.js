@@ -101,5 +101,5 @@ module.exports.login = (req, res, next) => {
 };
 
 module.exports.logout = (req, res) => {
-  res.clearCookie('jwt').send({ message: 'Выход' });
+  res.clearCookie('jwt', { path: '/', domain: 'tii-mesto.students.nomoredomains.work' }).send({ message: 'Выход' });
 };
