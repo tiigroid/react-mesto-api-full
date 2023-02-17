@@ -124,6 +124,6 @@ class Api {
   }
 }
 
-const api = new Api('https://tii-mesto.students.nomoredomains.work');
+const api = new Api('https://api.tii-mesto.students.nomoredomains.work');
 
 export default api;
