@@ -84,7 +84,7 @@ module.exports.login = (req, res, next) => {
 
   function createToken(user) {
     const token = jwt.sign({ _id: user._id }, NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret', { expiresIn: '7d' });
-    res.cookie('jwt', token, { maxAge: 3600000 * 24 * 7 }).send({ email, password });
+    res.cookie('jwt', token, { maxAge: 3600000 * 24 * 7, path: '/', domain: 'tii-mesto.students.nomoredomains.work' }).send({ email, password });
   }
 
   User.findOne({ email }).select('+password')
